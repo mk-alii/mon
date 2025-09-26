@@ -1,5 +1,31 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+    // دالة لإنشاء النجوم
+    function createStars() {
+        const starLayers = ['stars1', 'stars2', 'stars3'];
+        starLayers.forEach((layerId, index) => {
+            const starLayer = document.getElementById(layerId);
+            if (!starLayer) return;
+
+            const numStars = 100 + (index * 50); // عدد النجوم يزداد مع كل طبقة
+            let starShadows = "";
+
+            for (let i = 0; i < numStars; i++) {
+                const x = Math.floor(Math.random() * 2000); // توزيع عشوائي على عرض واسع
+                const y = Math.floor(Math.random() * 2000); // توزيع عشوائي على ارتفاع واسع
+                const alpha = Math.random() * 0.5 + 0.5; // شفافية عشوائية
+                
+                starShadows += `${x}px ${y}px rgba(255, 255, 255, ${alpha}), `;
+            }
+
+            // إزالة الفاصلة الأخيرة
+            starShadows = starShadows.slice(0, -2);
+            starLayer.style.boxShadow = starShadows;
+        });
+    }
+
+    createStars();
+    
     // 1. Navbar Scroll Effect
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
