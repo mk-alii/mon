@@ -791,95 +791,6 @@ footer {
     to { box-shadow: 0 0 20px #ff4d6d; }
 }
 
-/* ========================================= */
-/* === الكود المعالج للشاشات الصغيرة === */
-/* ========================================= */
-/* ================================
-    Responsive Navigation (Dark Style)
-================================ */
-@media screen and (max-width: 992px) {
-    .nav-links {
-        position: fixed;
-        top: 4.4rem;
-        right: 0;
-        background: linear-gradient(135deg, #0e0e12, #1a1d27);
-        flex-direction: column;
-        width: 70%; /* أوسع على الموبايل */
-        max-width: 280px;
-        height: 100vh;
-        justify-content: center;
-        align-items: center;
-        border-radius: 15px 0 0 15px;
-        transform: translateX(100%);
-        transition: transform 0.5s ease-in-out, box-shadow 0.4s ease;
-        box-shadow: -8px 0 25px rgba(0,0,0,0.6);
-        z-index: 999;
-    }
-
-    .nav-links li {
-        padding: 1rem;
-        width: 100%;
-        text-align: center;
-        opacity: 0;
-        transform: translateX(50px);
-        animation: none;
-    }
-
-    .nav-links li a {
-        font-size: 1.2rem;
-        font-weight: 600;
-        color: #fff;
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
-
-    .nav-links li a:hover {
-        color: var(--primary-color);
-    }
-
-    /* عند تفعيل القائمة */
-    .nav-active {
-        transform: translateX(0%);
-    }
-
-    .nav-active li {
-        animation: navLinkFade 0.6s forwards;
-    }
-
-    /* أيقونة البرجر تظهر */
-    .burger {
-        display: block;
-        cursor: pointer;
-        z-index: 1000;
-    }
-
-    .burger div {
-        width: 25px;
-        height: 3px;
-        background: #fff;
-        margin: 5px;
-        transition: all 0.3s ease;
-        border-radius: 2px;
-    }
-
-    /* تعديل الخطوط والأقسام */
-    .hero-content h1 { font-size: 2.2rem; }
-    .hero-content p { font-size: 1rem; }
-    .why-choose-us .container { flex-direction: column; }
-    .section-title { font-size: 1.8rem; }
-}
-
-/* Burger Animation (Toggle Class) */
-.toggle .line1 {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-.toggle .line2 {
-    opacity: 0;
-}
-.toggle .line3 {
-    transform: rotate(45deg) translate(-5px, -6px);
-}
-
 /* Animation for nav links appearing */
 @keyframes navLinkFade {
     from {
@@ -1265,23 +1176,6 @@ footer {
     display: none;
 }
 
-/* small-screen tweaks */
-@media (max-width: 900px) {
-    .projects-section { padding: 60px 1rem; }
-    .projects-page-grid { gap: 1rem; }
-    .project-item { height: 240px; border-radius: 12px; }
-}
-
-/* Reduce heavy effects on touch devices for performance */
-@media (hover: none) and (pointer: coarse) {
-    .project-item::after,
-    .project-item img {
-        transition: none;
-        transform: none;
-        box-shadow: none;
-    }
-    .project-item img { filter: brightness(0.95); }
-}
 
 /* ========================================= */
 /* === Partners Section Styles (New) === */ 
@@ -1722,9 +1616,9 @@ footer {
     }
 
     .nav-links li {
-        padding: 1rem;
-        text-align: center;
-        width: 100%;
+        padding: 0.5rem;
+        text-align: right;
+        
     }
 
     .nav-active {
@@ -1752,6 +1646,7 @@ footer {
     /* Hero */
     .hero-content h1 {
         font-size: 1.8rem;
+        margin-top: 3rem;
     }
     .hero-content p {
         font-size: 0.9rem;
@@ -1843,6 +1738,7 @@ footer {
     }
     .hero-content h1 {
         font-size: 2.2rem;
+        margin-top: 3rem;
     }
     .hero-content p {
         font-size: 1rem;
@@ -1987,6 +1883,7 @@ footer {
     }
     .hero-content h1 {
         font-size: 2.8rem;
+        margin-top: 3rem;
     }
     .hero-content p {
         font-size: 1.1rem;
@@ -2098,7 +1995,8 @@ footer {
     }
     /* Hero */
     .hero-content h1 {
-        font-size: 3.2rem;
+        font-size: 3.5rem;
+        margin-top: 3.5rem;
     }
     .hero-content p {
         font-size: 1.2rem;
@@ -2202,7 +2100,7 @@ footer {
 }
 
 /* 🖥️ شاشات متوسطة (<=1200px) */
-@media (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
     .logo-link {
         font-size: 1.8rem;
     }
@@ -2215,7 +2113,7 @@ footer {
         margin-top: 0 auto;
     }
     .hero-content h1 {
-        font-size: 2rem;
+        font-size: 3.5rem;
     }
     .hero-content p {
         font-size: 1rem;
